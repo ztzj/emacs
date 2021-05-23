@@ -1,0 +1,33 @@
+* windbg的使用
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/htmlize.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/readtheorg.css"/>
+
+#+HTML_HEAD: <script type="text/javascript" src="src/lib/js/jquery.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="src/lib/js/bootstrap.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="src/lib/js/jquery.stickytableheaders.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="src/readtheorg_theme/js/readtheorg.js"></script>
+#+HTML_HEAD: <style>pre.src{background:#343131;color:white;} </style>
+
+1: !process 0 0 列进程 加载记事本!process 0 0 notepad.exe
+
+2: dt显示结构dt !_KPROCESS + Address [ntdll包含所有函数及数据结构]
+
+3: r cr3 != 1||2,
+
+4: .process -i [ProcessAddress]
+
+5: s -u 0x00000000 L?0x7fffffff "fileName"
+
+6: du + StartAddress
+
+7: .formats[StartAddress] ;转化为32地址
+
+8：.formats 0y+[二进制数据]; 转化二进制数据为十六进制
+
+9： r cr3;cr4;
+
+10: !dd@cr3 ;@cr3是取cr3地址数据
+
+11：!dq +[StartAddress + 偏移地址] 取的是64进制
+
+12：dd查询虚拟地址；dd!查询物理地址
