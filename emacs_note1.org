@@ -1,0 +1,99 @@
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/htmlize.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/readtheorg.css"/>
+
+#+HTML_HEAD: <script type="text/javascript" src="src/lib/js/jquery.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="src/lib/js/bootstrap.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="src/lib/js/jquery.stickytableheaders.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="src/readtheorg_theme/js/readtheorg.js"></script>
+#+HTML_HEAD: <style>pre.src{background:#343131;color:white;} </style>
+# no default toc at all
+# #+OPTIONS: toc:2
+#+OPTIONS: p:2
+# ToDo list
+# #+SEQ_TODO: TODO(t) Delay(d) | DONE(d)
+
+# only number at level 2
+#+OPTIONS: H:3 ^:nil l num:2 
+
+# can use colors,date,email,.....
+#+TITLE:emacs-note1
+#+AUTHOR:ZTZJ
+
+* emcas常用命令
+ C = ctrl, M = Alt,Commond
+** 光标移动
+  | C-v 向下翻页     | M-v 向下翻页         |
+  | C-b 向左（back） | C-f 向右（forward）  |
+  | C-n 向下（next） | C-p 向上（previous） |
+  | M-b 上一个单词   | M-f 下一个单词        |
+  | C-a 行首        | C-e 行尾             |
+  | M-a 句首        | M-e句尾              |
+  | M-< 文件头      | M-> 文件尾            |
+  | M-g g 跳到某一行                        |
+** 选择区域
+   C-@ 标记
+** 删除剪切复制粘贴
+  | C-d 向后删除         |
+  | C-k 删除光标后至行尾 |
+  | M-w 复制区域         |
+  | C-w 剪切/删除区域    |
+  | C-y 粘贴             |
+  | M-y 滚动选择粘贴内容   |
+** 查找替换
+   | C-s 向前查找     |
+   | C-s C-r 向后查找 |
+   | M-% 替换           |
+** 文件操作
+   | C-x C-f 打开文件（find/create） |
+   | C-x C-s 保存文件                |
+   | C-x C-w 另存为                  |
+   | C-k 关闭文件                    |
+** 窗口操作
+   | C-x b 切换文件           |
+   | C-x 1 关闭其他窗口       |
+   | C-x 2/C-x 3 打开其他窗口 |
+   | C-x o 调到另一个窗口      |
+** 其他
+   | C-/ 撤销     |
+   | M-/ 智能补全 |
+   | M-$ 拼写检查 |
+   | M-x 输入命令 |
+   | C-g 取消命令
+* LaTeX编辑常见操作
+** 自动匹配括号，$，上下标（+shift）
+** 数学符号输入（希腊字母，运算符等），可自定义
+   ` + 其他按键
+** 修饰符字体/，可自定义
+   ` （引号）
+** 常见命令，可自定义（C-C ？ 查看）
+   |fr TAB = \frac{}{}
+   |sq TAB = \sqrt{}
+   |equ* TAB = begin{equation*} \end{equation*}
+   |qq TAB = \quad
+   |ref TAB =\ref{...}
+   |cte TAB =\cite{...}
+   |sn TAB = \section{}
+   |ss TAB = \subsection{}
+** 环境
+   | C-C C-e 生成新环境   |
+   | C-u C-C C-e 更改环境 |
+   | C-C ] 补全\end{...}    |
+** 选择、注释与编译
+   | C-x * 选中章节     |
+   | C-x . 选中         |
+   | C-C C-C 编译全文件 |
+   | C-C C-r 编译区域   |
+   | C-C C-v 查看PDF    |
+   | C-C；注释/取消注释区域      |
+** LaTeX命令
+   C-C Enter (\label,\ref,\newcommand等等）
+** outline mode 
+   | C-o 命令前缀 （可自定义，默认为C-C C-@） |
+   | C-o C-a 展开全部                         |
+   | C-o C-o 折叠其他                         |
+   | C-o C-t 折叠所有章节                     |
+   | C-o C-e 展开当前章节                           |
+** emacs内预览
+   | C-C C-p C-p 预览    |
+   | C-C C-p C-r预览区域 |
+   | C-C C-p C-C C-r 取消预览区域 |
